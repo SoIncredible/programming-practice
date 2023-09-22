@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Utils;
 
 Console.WriteLine("input numbers:");
 string? input = Console.ReadLine();
@@ -21,4 +22,25 @@ foreach(int number in numbers){
 	Console.Write(number + " ");
 }
 Console.WriteLine();
-Console.Write("Hello");
+
+// List TO Array
+
+int[] array = numbers.ToArray();
+
+// 使用冒泡排序
+
+for(int i = 0; i < array.Length; i++){
+	for(int j = 0; j < array.Length - i - 1; j++){
+		if(array[j] > array[j+1])Utils.Utils.Swap(ref array[j],ref array[j+1]);
+	} 
+}  
+Console.WriteLine("Sorted Array:");
+
+for(int i = 0; i < array.Length; i++){
+	Console.Write(array[i] + " ");
+}
+
+Console.Write("\n");
+
+
+
