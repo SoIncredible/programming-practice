@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Utils;
 
-3 1 2 9 8 6 7
 Console.WriteLine("input numbers:");
 string? input = Console.ReadLine();
 if(input == null){
