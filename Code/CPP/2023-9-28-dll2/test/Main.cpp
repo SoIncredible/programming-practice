@@ -2,7 +2,7 @@
 #include<dlfcn.h>
 using namespace std;
 
-typedef void (*Test1)();
+typedef void (*Test1)(int *arr, int size);
 typedef void (*Test2)();
 int main(){
 	
@@ -26,8 +26,9 @@ int main(){
 		return 1;
 	}
 
+	int number[] = { 2,3,4};
 
-	test1();
+	test1(number, 3);
 	test2();
 
 	dlclose(handle);
