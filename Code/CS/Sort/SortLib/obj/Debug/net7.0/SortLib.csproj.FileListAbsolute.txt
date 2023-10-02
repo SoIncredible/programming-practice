@@ -1,0 +1,12 @@
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/SortLib.csproj.AssemblyReference.cache
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/SortLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/SortLib.AssemblyInfoInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/SortLib.AssemblyInfo.cs
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/SortLib.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/bin/Debug/net7.0/SortLib.deps.json
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/bin/Debug/net7.0/SortLib.dll
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/bin/Debug/net7.0/SortLib.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/SortLib.dll
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/refint/SortLib.dll
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/SortLib.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/Sort/SortLib/obj/Debug/net7.0/ref/SortLib.dll
