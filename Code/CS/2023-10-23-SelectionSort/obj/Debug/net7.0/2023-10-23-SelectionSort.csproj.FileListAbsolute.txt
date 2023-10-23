@@ -1,0 +1,15 @@
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.csproj.AssemblyReference.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.AssemblyInfoInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.AssemblyInfo.cs
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/bin/Debug/net7.0/2023-10-23-SelectionSort
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/bin/Debug/net7.0/2023-10-23-SelectionSort.deps.json
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/bin/Debug/net7.0/2023-10-23-SelectionSort.runtimeconfig.json
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/bin/Debug/net7.0/2023-10-23-SelectionSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/bin/Debug/net7.0/2023-10-23-SelectionSort.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/refint/2023-10-23-SelectionSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/2023-10-23-SelectionSort.genruntimeconfig.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-23-SelectionSort/obj/Debug/net7.0/ref/2023-10-23-SelectionSort.dll
