@@ -1,0 +1,15 @@
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.csproj.AssemblyReference.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.AssemblyInfoInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.AssemblyInfo.cs
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/bin/Debug/net7.0/2023-11-2-InsertionSort
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/bin/Debug/net7.0/2023-11-2-InsertionSort.deps.json
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/bin/Debug/net7.0/2023-11-2-InsertionSort.runtimeconfig.json
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/bin/Debug/net7.0/2023-11-2-InsertionSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/bin/Debug/net7.0/2023-11-2-InsertionSort.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/refint/2023-11-2-InsertionSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/2023-11-2-InsertionSort.genruntimeconfig.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-11-2-InsertionSort/obj/Debug/net7.0/ref/2023-11-2-InsertionSort.dll
