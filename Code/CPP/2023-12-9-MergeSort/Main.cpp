@@ -1,7 +1,10 @@
 #include<iostream>
-#include"Head.h"
 #include<vector>
 using namespace std;
+
+void PrintArr(int* arr, int size);
+void MergeSort(int* arr, int size);
+void Merge(int* arr, int begin, int mid, int end, int size);
 
 int main(){
     cout << "Input Sorted Array:" << endl;
