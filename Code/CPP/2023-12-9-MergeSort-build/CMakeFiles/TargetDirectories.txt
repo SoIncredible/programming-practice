@@ -1,3 +1,0 @@
-/Users/mac/Desktop/programming-practice/Code/CPP/2023-12-9-MergeSort-build/CMakeFiles/mergeSort.dir
-/Users/mac/Desktop/programming-practice/Code/CPP/2023-12-9-MergeSort-build/CMakeFiles/edit_cache.dir
-/Users/mac/Desktop/programming-practice/Code/CPP/2023-12-9-MergeSort-build/CMakeFiles/rebuild_cache.dir
