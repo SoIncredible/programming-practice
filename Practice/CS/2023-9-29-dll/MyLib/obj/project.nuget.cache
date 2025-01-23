@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QDkxcpBXDOcs6AW4HMu4oohZWjiTHRN8FjJBisyBjUh29pXULhrOMCe84toWdpSpaW1ctQjBqcvjAHZXzigAEg==",
+  "success": true,
+  "projectFilePath": "/Users/mac/Desktop/programming-practice/Code/CS/2023-9-29-dll/MyLib/MyLib.csproj",
+  "expectedPackageFiles": [
+    "/Users/mac/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/mac/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

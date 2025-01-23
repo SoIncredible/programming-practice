@@ -1,0 +1,15 @@
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.csproj.AssemblyReference.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.AssemblyInfoInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.AssemblyInfo.cs
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/bin/Debug/net7.0/2023-10-11-QuickSort
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/bin/Debug/net7.0/2023-10-11-QuickSort.deps.json
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/bin/Debug/net7.0/2023-10-11-QuickSort.runtimeconfig.json
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/bin/Debug/net7.0/2023-10-11-QuickSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/bin/Debug/net7.0/2023-10-11-QuickSort.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/refint/2023-10-11-QuickSort.dll
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.pdb
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/2023-10-11-QuickSort.genruntimeconfig.cache
+/Users/mac/Desktop/programming-practice/Code/CS/2023-10-11-QuickSort/obj/Debug/net7.0/ref/2023-10-11-QuickSort.dll
