@@ -25,10 +25,8 @@ void Graph_Init(MGraph *G)
 {
 	for (int i = 0; i < MAX_VEX; i++)
 	{
-
 		for (int j = 0; j < MAX_VEX; j++)
 		{
-
 			G->arc[i][j] = 0;
 		}
 	}
@@ -48,11 +46,61 @@ int Graph_D(MGraph *G, int vexIndex)
 	return d;
 }
 
+#define V 5
+
+typedef struct VNode
+{
+	int data;
+	VNode *next;
+} VNode;
+
+void init(VNode *adjList[V])
+{
+	for (int i = 0; i < V; i++)
+	{
+		adjList[i] = NULL;
+	}
+}
+
+void addEdge(VNode *adjList[V], int src, int dest)
+{
+	VNode *newNode = (VNode *)malloc(sizeof(VNode));
+	newNode->data = dest;
+
+	// 链表头插法
+	newNode->next = adjList[src];
+	adjList[src] = newNode;
+}
+
 int main()
 {
+	VNode *adjList[V];
+
+	MGraph G;
+	Graph_Init(&G);
 
 	G.arc[0][1] = 1;
-	G.arc[0][1] = 1;
+	G.arc[1][0] = 1;
 
+	G.arc[0][2] = 1;
+	G.arc[2][0] = 1;
+
+	G.arc[0][3] = 1;
+	G.arc[3][0] = 1;
+
+	G.arc[4][1] = 1;
+	G.arc[1][4] = 1;
+
+	G.arc[2][4] = 1;
+	G.arc[4][2] = 1;
+
+	G.arc[3][5] = 1;
+	G.arc[5][3] = 1;
+
+	G.arc[4][3] = 1;
+	G.arc[3][4] = 1;
+
+	int d = Graph_D(&G, 3);
+	std::cout << "index为3的节点的度为:" << d << std::endl;
 	return 0;
 }
