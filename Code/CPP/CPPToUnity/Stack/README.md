@@ -1,0 +1,1 @@
+执行`g++ -shared -o StackLibrary.dylib StackLib.cpp StackUtils.cpp`导出dylib给Mac平台Unity使用.
