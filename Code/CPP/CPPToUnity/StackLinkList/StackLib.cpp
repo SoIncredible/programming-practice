@@ -14,22 +14,22 @@ class Stack
 {
 
 private:
-    Node<T> *top;
+    Node<T> *_top;
 
 public:
     Stack()
     {
         std :: cout << "调用构造函数" << std ::endl;
-        top = NULL;
+        _top = NULL;
     }
 
     ~Stack()
     {
         std::cout << "调用析构函数" << std::endl;
-        while (top != NULL)
+        while (_top != NULL)
         {
-            Node<T> *temp = top;
-            top = top->next;
+            Node<T> *temp = _top;
+            _top = _top->next;
             delete temp;
         }
     }
@@ -42,15 +42,15 @@ public:
     bool Pop(T &result)
     {
         std::cout << "调用Pop函数" << std::endl;
-        if (top == NULL)
+        if (_top == NULL)
         {
             std::cout << "栈为空, 不能够Pop" << std::endl;
             return false;
         }
 
-        result = top->value;
-        Node<T> *oldTop = top;
-        top = top->next;
+        result = _top->value;
+        Node<T> *oldTop = _top;
+        _top = _top->next;
         delete oldTop; // 释放栈顶节点的内存
         return true;
     }
@@ -58,12 +58,12 @@ public:
     bool Peek(T &result)
     {
         std ::cout << "调用Peek函数" << std ::endl;
-        if (top == NULL)
+        if (_top == NULL)
         {
             std::cout << "栈为空, 不能够Pop" << std::endl;
             return false;
         }
-        result = top->value;
+        result = _top->value;
         return true;
     }
 

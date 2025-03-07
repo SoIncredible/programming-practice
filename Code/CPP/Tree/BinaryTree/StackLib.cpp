@@ -5,7 +5,7 @@
 template <typename T>
 struct Node
 {
-    T value;
+    T *value;
     Node *next;
 };
 
@@ -14,68 +14,77 @@ class Stack
 {
 
 private:
-    Node<T> *top;
+    Node<T> *_top;
+    int _count;
 
 public:
     Stack()
     {
         std :: cout << "调用构造函数" << std ::endl;
-        top = NULL;
+        _top = NULL;
+        _count = 0;
     }
 
     ~Stack()
     {
         std::cout << "调用析构函数" << std::endl;
-        while (top != NULL)
+        while (_top != NULL)
         {
-            Node<T> *temp = top;
-            top = top->next;
+            Node<T> *temp = _top;
+            _top = _top->next;
             delete temp;
         }
     }
 
-    void Push()
+    void Push(T data)
     {
-        std ::cout << "调用Push函数" << std ::endl;
+        Node<T> *node = new Node();
+        node->value = *data;
+        node->next = _top;
+        _top = node;
+        _count++;
     }
 
     bool Pop(T &result)
     {
         std::cout << "调用Pop函数" << std::endl;
-        if (top == NULL)
+        if (_top == NULL)
         {
             std::cout << "栈为空, 不能够Pop" << std::endl;
             return false;
         }
 
-        result = top->value;
-        Node<T> *oldTop = top;
-        top = top->next;
-        delete oldTop; // 释放栈顶节点的内存
+        result = _top->value;
+        Node<T> *oldTop = _top;
+        _top = _top->next;
+        _count--;
+        // 这个delete删除的是指针占用的内存空间吧? 指针指向的位置不受影响?
+        oldTop = nullptr;
+        // delete *oldTop; // 释放栈顶节点的内存
         return true;
     }
 
     bool Peek(T &result)
     {
         std ::cout << "调用Peek函数" << std ::endl;
-        if (top == NULL)
+        if (_top == NULL)
         {
             std::cout << "栈为空, 不能够Pop" << std::endl;
             return false;
         }
-        result = top->value;
+        result = _top->value;
         return true;
     }
 
     bool IsEmpty()
     {
         std ::cout << "调用IsEmpty函数" << std ::endl;
-        return true;
+        return _count == 0;
     }
 
     int Count()
     {
         std ::cout << "调用Count函数" << std ::endl;
-        return 0;
+        return _count;
     }
 };

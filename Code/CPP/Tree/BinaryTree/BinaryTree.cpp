@@ -45,7 +45,7 @@ template <typename T>
 Stack<BinaryTreeNode<T>> BinaryTree<T>::PreorderTraversalRecursion(){
     // 这里不该用Stack 该用队列的. Stack出栈的顺序正好和要遍历的顺序反了
     // 另外需要注意一点是 这里的Stack调用Pop接口时 会释放掉原来的内存 需要确认的是 这个删除是否会对原来的二叉树有影响?
-    Stack<BinaryTreeNode<T>> stack;
+    Stack<BinaryTreeNode<T>> *stack = new Stack<BinaryTreeNode<T>>();
     InnerPreorderTraversalRecursion(_root, stack);
     // while(
 }
