@@ -1,11 +1,9 @@
 #include <iostream>
-// #include <cstddef>
-// 基于链表实现Stack数据结构
-// 支持int float string char
+
 template <typename T>
 struct Node
 {
-    T *value;
+    T &value;
     Node *next;
 };
 
@@ -38,13 +36,17 @@ public:
 
     void Push(T data)
     {
-        Node<T> *node = new Node();
-        node->value = *data;
+        Node<T> *node = new Node<T>();
+        // 值传递 本体修改不会影响栈中的数据
+        node->value = data;
         node->next = _top;
         _top = node;
         _count++;
     }
 
+    // 以下三种函数的声明方式有什么区别
+    // bool Pop(T result)
+    // bool Pop(T *result)
     bool Pop(T &result)
     {
         std::cout << "调用Pop函数" << std::endl;
@@ -54,13 +56,12 @@ public:
             return false;
         }
 
-        result = _top->value;
+        result = _top->value ;
         Node<T> *oldTop = _top;
         _top = _top->next;
         _count--;
-        // 这个delete删除的是指针占用的内存空间吧? 指针指向的位置不受影响?
-        oldTop = nullptr;
-        // delete *oldTop; // 释放栈顶节点的内存
+        // oldTop = nullptr;
+        delete oldTop;
         return true;
     }
 

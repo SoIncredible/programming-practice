@@ -23,102 +23,93 @@
 #endif
 #endif
 
-#include <iostream>
-// 基于链表实现Stack数据结构
+template <typename T>
+struct Node
+{
+    T *value;
+    Node *next;
+};
 
 template <typename T>
 class Stack{
 
 private:
-    struct Node
-    {
-        T data;
-        Node *next;
-        Node(const T& value) : data(value), next(nullptr){}
-    };
-
-    Node *top;
-
+    Node<T> *_top;
+    int _count;
 public:
-    Stack()
-    {
-        // std :: cout << "调用构造函数" << std ::endl;
-        top = nullptr;
-    }
-
-    ~Stack()
-    {
-        // std::cout << "调用析构函数" << std::endl;
-        while (top != nullptr)
-        {
-            Node *temp = top;
-            top = top->next;
-            delete temp;
-        }
-    }
-
-    void Push(const T& value)
-    {
-        // std ::cout << "调用Push函数" << std ::endl;
-        Node *newNode = new Node(value);
-        newNode->next = top;
-        top = newNode;
-    }
-
-    bool Pop(T& result)
-    {
-        // std::cout << "调用Pop函数" << std::endl;
-        if (top == nullptr)
-        {
-            std::cout << "栈为空, 不能够Pop" << std::endl;
-            return false;
-        }
-
-        result = top->data;
-        Node *oldTop = top;
-        top = top->next;
-        delete oldTop; // 释放栈顶节点的内存
-        return true;
-    }
-
-    bool Peek(T &result)
-    {
-        if (top == nullptr)
-        {
-            std::cout << "栈为空" << std::endl;
-            return false;
-        }
-        result = top->data;
-        return true;
-    }
-
-    bool IsEmpty()
-    {
-        if(top != nullptr){
-            return false;
-        }
-        return true;
-    }
-
-    int Count()
-    {
-        Node *temp = top;
-
-        int count = 0;
-        while (temp != nullptr)
-        {
-            temp = temp->next;
-            count++;
-        }
-        return count;
-    }
-
-    bool Delete(){
-        // if(this != nullptr){
-            delete this;
-            return true;
-        // }
-
-        // return false;
-    }
+    Stack();
+    ~Stack();
+    void Push(T &data);
+    T *Pop();
+    T *Peek();
+    bool IsEmpty();
+    int Count();
 };
+
+template <typename T>
+Stack<T>::Stack()
+{
+    _top = NULL;
+    _count = 0;
+}
+
+template <typename T>
+Stack<T>::~Stack()
+{
+    while (_top != NULL)
+    {
+        Node<T> *temp = _top;
+        _top = _top->next;
+        delete temp;
+    }
+}
+
+template <typename T>
+void Stack<T>::Push(T &data)
+{
+    Node<T> *node = new Node<T>();
+    // 值传递 本体修改不会影响栈中的数据
+    node->value = &data;
+    node->next = _top;
+    _top = node;
+    _count++;
+}
+
+template <typename T>
+T *Stack<T>::Pop()
+{
+    if (_top == NULL)
+    {
+        throw std::runtime_error("栈为空，无法进行 Peek 操作");
+    }
+
+    T *result = _top->value;
+    Node<T> *oldTop = _top;
+    _top = _top->next;
+    _count--;
+    delete oldTop;
+    return result;
+}
+
+template <typename T>
+T *Stack<T>::Peek()
+{
+    if (_top == NULL)
+    {
+        std::cout << "栈为空, 不能够Pop" << std::endl;
+        throw std::runtime_error("栈为空，无法进行 Pop 操作");
+    }
+    return _top->value;
+}
+
+template <typename T>
+bool Stack<T>::IsEmpty()
+{
+    return _count == 0;
+}
+
+template <typename T>
+int Stack<T>::Count()
+{
+    return _count;
+}

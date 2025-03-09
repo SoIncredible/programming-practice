@@ -6,21 +6,51 @@ struct Node{
     Node *next;
 };
 
+class someS{
+
+private:
+    Node *n;
+    // 这里面有一个存储结构
+public:
+
+    someS(){
+        n = new Node();
+        n->next = nullptr;
+        n->Data = -1;
+    }
+
+    void Store(Node node){
+        Node *nn = &node;
+        n->next = nn;
+    }
+    void Load();
+};
+
 int main(){
 
-    Node node = Node();
-    node.Data = 2;
-    node.next = nullptr;
-    Node *origin = &node;
+    // Node* node = new Node();
+    // node->Data = 2;
+    // node->next = nullptr;
+    // Node origin = *node;
 
-    Node *another = origin;
+    // Node *another = node;
 
-    std::cout << origin->Data << std::endl;
-    std::cout << another->Data << std::endl;
+    // std::cout << origin.Data << std::endl;
+    // std::cout << another->Data << std::endl;
 
-   another = nullptr;
+    // // another = nullptr;
+    // // delete another;
 
-    std::cout << origin->Data << std::endl;
-    std::cout << node.Data << std::endl;
+    // origin.Data = 33;
+    // std::cout << origin.Data << std::endl;
+    // std::cout << node->Data << std::endl;
+
+    Node n;
+    function(n);
+    std::cout << n.Data << std::endl;
+
+    // int* i = new int();
+    // func1(i);
+    // std ::cout << *i << std ::endl;
     return 0;
 }
