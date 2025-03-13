@@ -1,9 +1,14 @@
 #include <iostream>
 
 template <typename T>
+// 结构体和Class的区别是什么?
 struct Node{
     T *data;
     Node *next;
+
+    T GetData(){
+        return *data;
+    };
 };
 
 template <typename T>
@@ -20,6 +25,8 @@ public:
     ~Queue();
 
     void EnQueue(T &data);
+
+    void EnQueue(T *data);
 
     T* DeQueue();
 
@@ -49,6 +56,24 @@ template <typename T>
 void Queue<T>::EnQueue(T &data){
     Node<T> *node = new Node<T>();
     node->data = &data;
+    node->next = nullptr;
+    if (_count == 0)
+    {
+        _head = node;
+        _trail = node;
+    }
+    else
+    {
+        _trail->next = node;
+        _trail = node;
+    }
+    _count++;
+}
+
+template <typename T>
+void Queue<T>::EnQueue(T* data){
+    Node<T> *node = new Node<T>();
+    node->data = data;
     node->next = nullptr;
     if(_count == 0){
         _head = node;

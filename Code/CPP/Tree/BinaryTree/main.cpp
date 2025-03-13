@@ -8,7 +8,8 @@ int main(){
     head->data = new int(1);
 
     head->left = new BinaryTreeNode<int>();
-    head->left->data = new int(2);
+    int *a = new int(2);
+    head->left->data = a;
     head->left->left = nullptr;
     head->left->right = nullptr;
 
@@ -20,11 +21,13 @@ int main(){
 
     BinaryTree<int>* intBTree = new BinaryTree<int>(head);
 
-    Queue<BinaryTreeNode<int> > *q = intBTree->PreorderTraversalRecursion();
+    // Queue<BinaryTreeNode<int> > *q = intBTree->PreorderTraversalRecursion();
+
+    Queue<BinaryTreeNode<int> > *q = intBTree->InorderTraversalRecursion();
 
     while(!q->IsEmpty()){
         BinaryTreeNode<int> *qq = q->DeQueue();
-        std::cout << qq->data << std::endl;
+        std::cout << qq->GetData() << std::endl;
     }
 
     delete head->left;
