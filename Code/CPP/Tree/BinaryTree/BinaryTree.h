@@ -8,6 +8,14 @@ struct BinaryTreeNode
     BinaryTreeNode<T> *left;  // 左子树
     BinaryTreeNode<T> *right; // 右子树
 
+    void SetData(T &d){
+        data = &data;
+    }
+
+    void SetData(T *d){
+        data = d;
+    }
+
     T GetData(){
         return *data;
     }
