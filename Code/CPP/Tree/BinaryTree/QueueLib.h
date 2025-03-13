@@ -1,15 +1,5 @@
 #include <iostream>
-
-template <typename T>
-// 结构体和Class的区别是什么?
-struct Node{
-    T *data;
-    Node *next;
-
-    T GetData(){
-        return *data;
-    };
-};
+#include "Node.h"
 
 template <typename T>
 class Queue

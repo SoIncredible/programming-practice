@@ -23,12 +23,7 @@
 #endif
 #endif
 
-template <typename T>
-struct Node
-{
-    T *value;
-    Node *next;
-};
+#include "Node.h"
 
 template <typename T>
 class Stack{
@@ -79,7 +74,7 @@ void Stack<T>::Push(T &data)
 template <typename T>
 void Stack<T>::Push(T *data){
     Node<T> *node = new Node<T>();
-    node->value = data;
+    node->data = data;
     node->next = _top;
     _top = node;
     _count++;
@@ -93,7 +88,7 @@ T *Stack<T>::Pop()
         throw std::runtime_error("栈为空，无法进行 Peek 操作");
     }
 
-    T *result = _top->value;
+    T *result = _top->data;
     Node<T> *oldTop = _top;
     _top = _top->next;
     _count--;
