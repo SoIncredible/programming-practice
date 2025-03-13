@@ -72,7 +72,7 @@ void Queue<T>::EnQueue(T &data){
 
 template <typename T>
 void Queue<T>::EnQueue(T* data){
-    Node<T> *node = new Node<T>();
+    Node<T> *node = new Node<T>(); // 这个node申请的内存何时释放？
     node->data = data;
     node->next = nullptr;
     if(_count == 0){

@@ -40,6 +40,7 @@ public:
     Stack();
     ~Stack();
     void Push(T &data);
+    void Push(T *data);
     T *Pop();
     T *Peek();
     bool IsEmpty();
@@ -70,6 +71,15 @@ void Stack<T>::Push(T &data)
     Node<T> *node = new Node<T>();
     // 值传递 本体修改不会影响栈中的数据
     node->value = &data;
+    node->next = _top;
+    _top = node;
+    _count++;
+}
+
+template <typename T>
+void Stack<T>::Push(T *data){
+    Node<T> *node = new Node<T>();
+    node->value = data;
     node->next = _top;
     _top = node;
     _count++;
