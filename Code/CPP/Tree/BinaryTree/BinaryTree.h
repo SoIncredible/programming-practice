@@ -1,5 +1,12 @@
+#ifndef QUEUELIB_H
 #include "QueueLib.h"
+#define QUEUELIB_H
+#endif
+
+#ifndef STACKLIB_H
 #include "StackLib.h"
+#define STACKLIB_H
+#endif
 
 /// 该脚本为二叉树的指针版本 树的信息存储基于指针
 
@@ -186,15 +193,18 @@ void BinaryTree<T>::PostorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
     }
 
     // 将队列反转
-    while(!queue->IsEmpty()){
-        BinaryTreeNode<T> *node = queue->DeQueue();
-        stack.Push(node);
-    }
 
-    while(!stack.IsEmpty()){
-        BinaryTreeNode<T> *node = stack.Pop();
-        queue->EnQueue(node);
-    }
+    queue->Reverse();
+
+    // while(!queue->IsEmpty()){
+    //     BinaryTreeNode<T> *node = queue->DeQueue();
+    //     stack.Push(node);
+    // }
+
+    // while(!stack.IsEmpty()){
+    //     BinaryTreeNode<T> *node = stack.Pop();
+    //     queue->EnQueue(node);
+    // }
 }
 
 template <typename T>

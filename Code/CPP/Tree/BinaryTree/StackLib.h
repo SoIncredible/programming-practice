@@ -23,7 +23,10 @@
 #endif
 #endif
 
+#ifndef NODE_H
+#define NODE_H
 #include "Node.h"
+#endif
 
 template <typename T>
 class Stack{
@@ -101,7 +104,6 @@ T *Stack<T>::Peek()
 {
     if (_top == NULL)
     {
-        std::cout << "栈为空, 不能够Pop" << std::endl;
         throw std::runtime_error("栈为空，无法进行 Pop 操作");
     }
     return _top->value;

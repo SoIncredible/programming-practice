@@ -1,5 +1,12 @@
-#include <iostream>
+#ifndef NODE_H
+#define NODE_H
 #include "Node.h"
+#endif
+
+#ifndef STACKLIB_H
+#define STACKLIB_H
+#include "StackLib.h"
+#endif
 
 template <typename T>
 class Queue
@@ -64,7 +71,7 @@ void Queue<T>::EnQueue(T &data){
 
 template <typename T>
 void Queue<T>::EnQueue(T* data){
-    Node<T> *node = new Node<T>(); // 这个node申请的内存何时释放？
+    Node<T> *node = new Node<T>(); // 这个node申请的内存何时释放？ 在队列的析构函数中释放
     node->data = data;
     node->next = nullptr;
     if(_count == 0){
@@ -105,5 +112,14 @@ int Queue<T>::Count(){
 
 template <typename T>
 void Queue<T>::Reverse(){
-    
+    Stack<T> stack = Stack<T>();
+    while(!IsEmpty()){
+        T* node = DeQueue();
+        stack.Push(node);
+    }
+
+    while(!stack.IsEmpty()){
+        T* node = stack.Pop();
+        EnQueue(node);
+    }
 }
