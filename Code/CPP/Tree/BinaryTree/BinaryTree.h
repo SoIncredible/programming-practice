@@ -101,7 +101,14 @@ BinaryTree<T>::BinaryTree(BinaryTreeNode<T> *node)
 template <typename T>
 BinaryTree<T>::~BinaryTree()
 {
-    // TODO Eddie 删除树中的所有节点
+    // 前序遍历所有节点
+    Queue<BinaryTreeNode<T>> *queue = new Queue<BinaryTreeNode<T>>();
+    PreorderTraversalRecursion(queue);
+    while(!queue->IsEmpty()){
+        BinaryTreeNode<T>* node = queue->DeQueue();
+        delete node;
+    }
+    delete queue;
 }
 
 template <typename T>
