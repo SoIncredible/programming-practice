@@ -48,8 +48,10 @@ int main(){
     // intBTree->PostorderTraversalRecursion(q);
     // 前序遍历 迭代
     // intBTree->PreorderTraversalIteration(q);
+    // 中序遍历 迭代
+    intBTree->InorderTraversalIteration(q);
     // 后序遍历 迭代
-    intBTree->PostorderTraversalIteration(q);
+    // intBTree->PostorderTraversalIteration(q);
 
     // 这种方式创建的指针是不需要delete的 函数作用域结束之后内存会自动被回收
     BinaryTree<int> intBTreeOnStack = BinaryTree<int>(head);

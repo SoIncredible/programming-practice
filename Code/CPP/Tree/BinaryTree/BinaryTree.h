@@ -74,7 +74,7 @@ public:
     void PreorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
 
     // 中序遍历-深度优先-迭代
-    void InorderTraversalIteration();
+    void InorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
 
     // 中序遍历-深度优先-递归
     void InorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
@@ -168,8 +168,22 @@ void BinaryTree<T>::PreorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue)
 }
 
 template <typename T>
-void BinaryTree<T>::InorderTraversalIteration()
+void BinaryTree<T>::InorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
 {
+    // 迭代方式 中序遍历二叉树结点
+    BinaryTreeNode<T> *cur = _root;
+    Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
+    
+    while(cur != nullptr || !stack.IsEmpty()){
+        if(cur != nullptr){ // 如果当前节点不为null
+            stack.Push(cur); // 将当前节点入栈
+            cur = cur->left; // 尝试遍历当前节点的左孩子节点
+        }else{ // 如果当前节点是空了
+            BinaryTreeNode<T> *node = stack.Pop(); // 从栈中取出来一个元素
+            queue->EnQueue(node); // 将该元素放入返回队列中
+            cur = node->right; // 尝试遍历取出来的这个元素的右孩子
+        }
+    }
 }
 
 // 中序遍历
