@@ -40,10 +40,16 @@ int main(){
     BinaryTree<int>* intBTree = new BinaryTree<int>(head);
 
     Queue<BinaryTreeNode<int>> *q = new Queue<BinaryTreeNode<int>>();
-    intBTree->PreorderTraversalRecursion(q);
+    // 前序遍历 递归
+    // intBTree->PreorderTraversalRecursion(q);
+    // 中序遍历 递归
     // intBTree->InorderTraversalRecursion(q);
+    // 后序遍历 递归
     // intBTree->PostorderTraversalRecursion(q);
+    // 前序遍历 迭代
     // intBTree->PreorderTraversalIteration(q);
+    // 后序遍历 迭代
+    intBTree->PostorderTraversalIteration(q);
 
     // 这种方式创建的指针是不需要delete的 函数作用域结束之后内存会自动被回收
     BinaryTree<int> intBTreeOnStack = BinaryTree<int>(head);

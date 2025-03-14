@@ -61,22 +61,22 @@ public:
     void LevelOrderTraversalRecursion();
 
     // 前序遍历-深度优先-迭代
-    void PreorderTraversalIteration(Queue< BinaryTreeNode<T>> *queue);
+    void PreorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
 
     // 前序遍历-深度优先-递归
-    void PreorderTraversalRecursion(Queue< BinaryTreeNode<T>> *queue);
+    void PreorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
 
     // 中序遍历-深度优先-迭代
     void InorderTraversalIteration();
 
     // 中序遍历-深度优先-递归
-    void InorderTraversalRecursion(Queue< BinaryTreeNode<T>> *queue);
+    void InorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
 
     // 后序遍历-深度优先-迭代
-    void PostorderTraversalIteration(BinaryTreeNode<T> *queue);
+    void PostorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
 
     // 后序遍历-深度优先-递归
-    void PostorderTraversalRecursion(Queue< BinaryTreeNode<T>> *queue);
+    void PostorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
 };
 
 template <typename T>
@@ -121,9 +121,9 @@ void BinaryTree<T>::LevelOrderTraversalRecursion()
 /// @tparam T 
 /// @param queue 
 template <typename T>
-void BinaryTree<T>::PreorderTraversalIteration(Queue< BinaryTreeNode<T>> *queue)
+void BinaryTree<T>::PreorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
 {
-    Stack< BinaryTreeNode<T>> stack = Stack< BinaryTreeNode<T>>();
+    Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
 
     stack.Push(_root);
     
@@ -166,9 +166,9 @@ void BinaryTree<T>::InorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue)
 }
 
 template <typename T>
-void BinaryTree<T>::PostorderTraversalIteration(BinaryTreeNode<T> *queue)
+void BinaryTree<T>::PostorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
 {
-    Stack< BinaryTreeNode<T>> stack = Stack< BinaryTreeNode<T>>();
+    Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
 
     stack.Push(_root);
     
@@ -186,6 +186,15 @@ void BinaryTree<T>::PostorderTraversalIteration(BinaryTreeNode<T> *queue)
     }
 
     // 将队列反转
+    while(!queue->IsEmpty()){
+        BinaryTreeNode<T> *node = queue->DeQueue();
+        stack.Push(node);
+    }
+
+    while(!stack.IsEmpty()){
+        BinaryTreeNode<T> *node = stack.Pop();
+        queue->EnQueue(node);
+    }
 }
 
 template <typename T>
@@ -231,13 +240,13 @@ void BinaryTree<T>::InnerInorderTraversalRecursion(BinaryTreeNode<T> *cur, Queue
     }
 
     // 遍历左
-    InnerPreorderTraversalRecursion(cur->left, queue);
+    InnerInorderTraversalRecursion(cur->left, queue);
 
     // 输出cur的index
     queue->EnQueue(cur);
 
     // 遍历右
-    InnerPreorderTraversalRecursion(cur->right, queue);
+    InnerInorderTraversalRecursion(cur->right, queue);
 }
 
 template <typename T>
@@ -250,10 +259,10 @@ void BinaryTree<T>::InnerPostorderTraversalRecursion(BinaryTreeNode<T> *cur, Que
     }
 
     // 遍历左
-    InnerPreorderTraversalRecursion(cur->left, queue);
+    InnerPostorderTraversalRecursion(cur->left, queue);
 
     // 遍历右
-    InnerPreorderTraversalRecursion(cur->right, queue);
+    InnerPostorderTraversalRecursion(cur->right, queue);
 
      // 输出cur的index
      queue->EnQueue(cur);
