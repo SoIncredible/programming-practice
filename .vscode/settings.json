@@ -53,6 +53,24 @@
     "algorithm": "cpp",
     "type_traits": "cpp",
     "__config": "cpp",
-    "iterator": "cpp"
-  }
+    "iterator": "cpp",
+    "atomic": "cpp",
+    "bit": "cpp",
+    "*.tcc": "cpp",
+    "charconv": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "exception": "cpp",
+    "functional": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "system_error": "cpp",
+    "utility": "cpp",
+    "format": "cpp",
+    "numbers": "cpp",
+    "span": "cpp",
+    "text_encoding": "cpp"
+  },
+  "cmake.sourceDirectory": "C:/Users/TU/Desktop/programming-practice/Code/CPP/assertAndMacro"
 }

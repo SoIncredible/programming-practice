@@ -39,7 +39,7 @@ int main(){
 
     BinaryTree<int>* intBTree = new BinaryTree<int>(head);
 
-    Queue<BinaryTreeNode<int> > *q = new Queue<BinaryTreeNode<int> >();
+    Queue<BinaryTreeNode<int>> *q = new Queue<BinaryTreeNode<int>>();
     intBTree->PreorderTraversalRecursion(q);
     // intBTree->InorderTraversalRecursion(q);
     // intBTree->PostorderTraversalRecursion(q);

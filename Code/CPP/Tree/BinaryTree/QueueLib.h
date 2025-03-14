@@ -23,6 +23,8 @@ public:
     bool IsEmpty();
 
     int Count();
+
+    void Reverse();
 };
 
 template <typename T>
@@ -99,4 +101,9 @@ bool Queue<T>::IsEmpty(){
 template <typename T>
 int Queue<T>::Count(){
     return _count;
+}
+
+template <typename T>
+void Queue<T>::Reverse(){
+    
 }
