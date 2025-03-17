@@ -37,8 +37,6 @@ class BinaryTree
 private:
     BinaryTreeNode<T> *_root;
 
-    void InnerLevelOrderTraversalIteration();
-
     void InnerLevelOrderTraversalRecursion(BinaryTreeNode<T> *cur);
 
     void InnerPreorderTraversalRecursion(BinaryTreeNode<T> *cur, Queue<BinaryTreeNode<T>> *stack);
@@ -62,10 +60,7 @@ public:
     void RemoveNode();
 
     // 层序遍历-广度优先-迭代
-    void LevelOrderTraversalIteration();
-
-    // 层序遍历-广度优先-递归
-    void LevelOrderTraversalRecursion();
+    void LevelOrderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
 
     // 前序遍历-深度优先-迭代
     void PreorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
@@ -122,13 +117,34 @@ void BinaryTree<T>::RemoveNode()
 }
 
 template <typename T>
-void BinaryTree<T>::LevelOrderTraversalIteration()
+void BinaryTree<T>::LevelOrderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
 {
-}
+    Queue<BinaryTreeNode<T>> *q = new Queue<BinaryTreeNode<T>>();
+    int levelNodeSize;
+    if(_root != nullptr){
+        q->EnQueue(_root);
+    }
 
-template <typename T>
-void BinaryTree<T>::LevelOrderTraversalRecursion()
-{
+    while (!q->IsEmpty())
+    {
+        levelNodeSize = q->Count();
+        while (levelNodeSize > 0)
+        {
+            BinaryTreeNode<T> *node = q->DeQueue();
+            if (node->left != nullptr)
+            {
+                q->EnQueue(node->left);
+            }
+
+            if (node->right != nullptr)
+            {
+                q->EnQueue(node->right);
+            }
+            levelNodeSize--;
+            queue->EnQueue(node);
+        }
+    }
+    delete q;
 }
 
 /// @brief 迭代方式前序遍历二叉树
@@ -232,16 +248,6 @@ template <typename T>
 void BinaryTree<T>::PostorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue)
 {
     InnerPostorderTraversalRecursion(_root, queue);
-}
-
-template <typename T>
-void BinaryTree<T>::InnerLevelOrderTraversalIteration()
-{
-}
-
-template <typename T>
-void BinaryTree<T>::InnerLevelOrderTraversalRecursion(BinaryTreeNode<T> *cur)
-{
 }
 
 template <typename T>
