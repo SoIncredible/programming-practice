@@ -9,7 +9,7 @@
 #endif
 
 /// 该脚本为二叉树的指针版本 树的信息存储基于指针
-
+/// TODO Eddie 要用宏分别在Mac和Windows上在析构函数中做一下释放内存的操作.
 template <typename T>
 struct BinaryTreeNode
 {
@@ -65,17 +65,26 @@ public:
     // 前序遍历-深度优先-迭代
     void PreorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
 
+    // 前序遍历-深度优先-迭代-统一写法
+    void PreorderTraversalIterationUniform(Queue<BinaryTreeNode<T>> *queue);
+
     // 前序遍历-深度优先-递归
     void PreorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
 
     // 中序遍历-深度优先-迭代
     void InorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
 
+    // 中序遍历-深度优先-迭代-统一写法
+    void InorderTraversalIterationUniform(Queue<BinaryTreeNode<T>> *queue);
+
     // 中序遍历-深度优先-递归
     void InorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
 
     // 后序遍历-深度优先-迭代
     void PostorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue);
+
+    // 后序遍历-深度优先-迭代-统一写法
+    void PostorderTraversalIterationUniform(Queue<BinaryTreeNode<T>> *queue);
 
     // 后序遍历-深度优先-递归
     void PostorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue);
@@ -170,6 +179,25 @@ void BinaryTree<T>::PreorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
     }
 }
 
+/// @brief 前序遍历统一写法 使用的是标记法 遇到栈顶元素是null了, 就代表需要将下一个栈顶元素加入到result中了
+/// @tparam T 
+/// @param queue 结果队列
+template <typename T>
+void BinaryTree<T> :: PreorderTraversalIterationUniform(Queue<BinaryTreeNode<T>> *queue){
+    if(_root == nullptr){
+        return;
+    }
+
+    // 定义一个stack
+    Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
+
+    while(!stack.IsEmpty()){
+        
+
+    }
+
+}
+
 // 递归遍历要点
 // 1.确定递归函数的参数和返回值
 // 2.确定终止条件
@@ -183,6 +211,9 @@ void BinaryTree<T>::PreorderTraversalRecursion(Queue<BinaryTreeNode<T>> *queue)
     InnerPreorderTraversalRecursion(_root, queue);
 }
 
+/// @brief 中序遍历的迭代写法
+/// @tparam T 
+/// @param queue 
 template <typename T>
 void BinaryTree<T>::InorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
 {
@@ -190,6 +221,7 @@ void BinaryTree<T>::InorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
     BinaryTreeNode<T> *cur = _root;
     Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
     
+    // cur 为null的含义是, 以当前栈顶节点为根节点的树的左子树已经遍历完毕
     while(cur != nullptr || !stack.IsEmpty()){
         if(cur != nullptr){ // 如果当前节点不为null
             stack.Push(cur); // 将当前节点入栈
@@ -302,5 +334,5 @@ void BinaryTree<T>::InnerPostorderTraversalRecursion(BinaryTreeNode<T> *cur, Que
     InnerPostorderTraversalRecursion(cur->right, queue);
 
      // 输出cur的index
-     queue->EnQueue(cur);
+    queue->EnQueue(cur);
 }
