@@ -191,9 +191,32 @@ void BinaryTree<T> :: PreorderTraversalIterationUniform(Queue<BinaryTreeNode<T>>
     // 定义一个stack
     Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
 
-    while(!stack.IsEmpty()){
-        
+    stack.Push(_root);
 
+    while(!stack.IsEmpty()){
+
+        BinaryTreeNode<T> *node = stack.Pop();
+
+        if(node != nullptr){
+            
+            if(node->right != nullptr){
+                stack.Push(node->right);
+            }
+
+            if (node->left != nullptr)
+            {
+                stack.Push(node->left);
+            }
+
+            stack.Push(node);
+            stack.Push(nullptr);
+        }
+        else
+        {
+            // 需要把栈顶元素加入到队列中
+            node = stack.Pop();
+            queue->EnQueue(node);
+        }
     }
 
 }
@@ -230,6 +253,38 @@ void BinaryTree<T>::InorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
             BinaryTreeNode<T> *node = stack.Pop(); // 从栈中取出来一个元素
             queue->EnQueue(node); // 将该元素放入返回队列中
             cur = node->right; // 尝试遍历取出来的这个元素的右孩子
+        }
+    }
+}
+
+template <typename T>
+void BinaryTree<T> :: InorderTraversalIterationUniform(Queue<BinaryTreeNode<T>> *queue){
+    
+    if(_root == nullptr){
+        return;
+    }
+
+    Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
+    stack.Push(_root);
+    while (!stack.IsEmpty())
+    {
+        BinaryTreeNode<T> *node = stack.Pop();
+        if(node != nullptr){
+            if(node->right != nullptr){
+                stack.Push(node->right);
+            }
+
+            stack.Push(node);
+            stack.Push(nullptr);
+
+            if(node->left != nullptr){
+                stack.Push(node->left);
+            }
+        }
+        else
+        {
+            node = stack.Pop();
+            queue->EnQueue(node);
         }
     }
 }
@@ -274,6 +329,38 @@ void BinaryTree<T>::PostorderTraversalIteration(Queue<BinaryTreeNode<T>> *queue)
     //     BinaryTreeNode<T> *node = stack.Pop();
     //     queue->EnQueue(node);
     // }
+}
+
+template <typename T>
+void BinaryTree<T> :: PostorderTraversalIterationUniform(Queue<BinaryTreeNode<T>> *queue){
+    
+    if(_root == nullptr){
+        return;
+    }
+
+    Stack<BinaryTreeNode<T>> stack = Stack<BinaryTreeNode<T>>();
+    stack.Push(_root);
+
+    while(!stack.IsEmpty()){
+        BinaryTreeNode<T> *node = stack.Pop();
+
+        if (node != nullptr){
+
+            stack.Push(node);
+            stack.Push(nullptr);
+
+            if(node->right != nullptr){
+                stack.Push(node->right);
+            }
+
+            if(node->left != nullptr){
+                stack.Push(node->left);
+            }
+        }else{
+            node = stack.Pop();
+            queue->EnQueue(node);
+        }
+    }
 }
 
 template <typename T>

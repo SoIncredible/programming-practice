@@ -54,7 +54,16 @@ int main(){
     // 后序遍历 迭代
     // intBTree->PostorderTraversalIteration(q);
     // 层序遍历 迭代
-    intBTree->LevelOrderTraversalIteration(q);
+    // intBTree->LevelOrderTraversalIteration(q);
+
+    // 前序遍历 迭代 统一写法
+    // intBTree->PreorderTraversalIterationUniform(q);
+
+    // 中序遍历 迭代 统一写法
+    // intBTree->InorderTraversalIterationUniform(q);
+
+    // 后序遍历 迭代 统一写法
+    intBTree->PostorderTraversalIterationUniform(q);
 
     // 这种方式创建的指针是不需要delete的 函数作用域结束之后内存会自动被回收
     BinaryTree<int> intBTreeOnStack = BinaryTree<int>(head);
@@ -74,6 +83,8 @@ int main(){
     // delete head->left;
     // delete head->right;
     // delete head;
+#ifdef _WIN32
     delete intBTree;
+#endif
     return 0;
 }
